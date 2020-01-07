@@ -1,0 +1,425 @@
+$red: #e23315;
+$blue: #14b5dd;
+$darkgray: #333;
+$ubuntu: Ubuntu, Arial, sans-serif;
+$economica: Economica, 'Arial Narrow', sans-serif;
+@mixin pseudo-clear {content: ''; display: block; clear: both}
+@mixin reset-list {margin: 0; padding: 0; list-style: none}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('../../fonts/Ubuntu-Light.woff2') format('woff2'),
+			 url('../../fonts/Ubuntu-Light.woff') format('woff'),
+			 url('../../fonts/Ubuntu-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('../../fonts/Ubuntu-Medium.woff2') format('woff2'),
+			 url('../../fonts/Ubuntu-Medium.woff') format('woff'),
+			 url('../../fonts/Ubuntu-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Economica';
+	src: url('../../fonts/Economica-Regular.woff2') format('woff2'),
+			 url('../../fonts/Economica-Regular.woff') format('woff'),
+			 url('../../fonts/Economica-Regular.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+* {margin: 0}
+html, body {height: 100%}
+body {margin: 0; padding: 0; background: #FFF}
+img {border: 0; max-width: 100%; height: auto}
+input::-moz-focus-inner {border: 0; padding: 0}
+
+body {font-family: $ubuntu; font-weight: 300; font-size: 16px; line-height: 1.5; color: #000}
+h1, h2, h3, h4, h5, h6 {margin: 16px 0; padding: 0; font-weight: 300; font-size: 16px; line-height: 1.5}
+p {margin: 1em 0}
+b, strong {font-weight: 500}
+a {color: $blue}
+a:hover {color: #333}
+
+.nowrap {white-space: nowrap}
+.clear {clear: both}
+
+.container {max-width: 1200px; margin: 0 auto}
+
+.btn {
+	display: inline-block; padding: 12px 24px; background: $blue; font-size: 14px; line-height: 1.15; font-weight: 500; color: #FFF; text-decoration: none; text-transform: uppercase; transition: all 0.2s;
+	&.btn-large {padding: 19px 32px; font-size: 16px}
+	&.btn-small {padding: 8px 18px; font-size: 12px}
+	&.btn-secondary {background: #99a5a8}
+	&:hover {background: $darkgray; color: #FFF}
+}
+button.btn {border: 0; border-radius: 0; box-shadow: none; font-family: $ubuntu; cursor: pointer}
+
+header {
+	.logo {
+		a {display: block; float: left; width: 216px; height: 76px; margin: 20px 20px 20px 0; background: url('../../../img/unoptimized/logo.png') no-repeat center / 216px 76px; text-indent: -9999px}
+	}
+	.tools {
+		float: right;
+		ul {@include reset-list; margin: 28px 0}
+		li {
+			display: inline-block; margin: 0 25px; padding: 0; text-align: center;
+			a {
+				display: block; font-size: 12px; font-weight: 500; color: $red; text-decoration: none; text-transform: uppercase; transition: all 0.2s;
+				&:hover {color: $blue}
+				&::before {content: ''; display: block; width: 32px; height: 32px; margin: 3px auto 8px auto; background: transparent no-repeat center / 32px 32px}
+			}
+			&.account a::before {background-image: url('../../../img/unoptimized/icons/icon-user.png')}
+			&.settings a::before {background-image: url('../../../img/unoptimized/icons/icon-settings.png')}
+			&.add a::before {background-image: url('../../../img/unoptimized/icons/icon-add.png')}
+			&.logout a::before {background-image: url('../../../img/unoptimized/icons/icon-logout.png')}
+		}
+	}
+}
+
+section {
+	clear: both;
+	&.promo {
+		.slider {
+			position: relative; width: 100%; overflow: hidden;
+			.slides {
+				@include reset-list; transition: margin 0.5s;
+				&.notrans {transition: none}
+				li {display: block; float: left; position: relative; margin: 0; padding: 0; width: 100vw; height: 25vw; text-align: center; overflow: hidden}
+				img {position: absolute; left: 50%; transform: translateX(-50%); height: 100%; width: auto; max-width: initial}
+				.overlay {position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.5)}
+				.text {position: absolute; bottom: 33%; left: 0; right: 0; padding: 30px 0; font-family: Economica, 'Arial Narrow', sans-serif; font-size: 7.5vw; color: #FFF; text-align: center; text-transform: uppercase}
+				.button {
+					position: absolute; bottom: 20%; left: 0; right: 0; text-align: center;
+					.btn {
+						background: rgba($blue, 0.85);
+						&:hover {background: rgba($darkgray, 0.85)}
+					}
+				}
+				.progress {position: absolute; top: 0; left: 0; right: 0; width: 0; height: 3px; margin: 0 auto; background: $blue}
+			}
+			.nav {
+				@include reset-list; position: absolute; left: 0; right: 0; bottom: 3px; text-align: center; line-height: 10px;
+				li {
+					display: inline-block; width: 7vw; height: 17px; margin: 0 0.5vw; text-align: left; text-indent: -9999px;
+					a {
+						display: block; width: 100%; height: 100%; border-top: 3px solid rgba(255,255,255,0.33);
+						&:hover {border-top-color: #FFF}
+					}
+					&.active a {border-top-color: #FFF}
+				}
+			}
+			&::after {@include pseudo-clear}
+		}
+	}
+}
+
+main {
+	padding-top: 3.25em;
+	.heading {
+		padding-left: 25%;
+		h1 {margin: 0 0 0.5em 0; font-size: 36px; line-height: 1.125; font-weight: 300; color: $red}
+		.sort {
+			margin-bottom: 3.5em; font-size: 13px; color: #999; text-transform: uppercase; letter-spacing: 0.2em;
+			a {
+				display: inline-block; vertical-align: 0; margin-left: 15px; color: #999; text-decoration: none; transition: all 0.2s;
+				&::after {
+					content: ''; display: inline-block; vertical-align: -2px; margin-left: 8px; background: transparent no-repeat center; opacity: 0.4; transition: all 0.2s
+				}
+				&.trending::after {
+					width: 18px; height: 13px; background-image: url('../../../img/unoptimized/icons/icon-trending.png'); background-size: 18px 13px
+				}
+				&.date::after {
+					width: 13px; height: 13px; background-image: url('../../../img/unoptimized/icons/icon-date.png'); background-size: 13px 13px
+				}
+				&.active {
+					color: #000;
+					span {border-bottom: 1px solid #999}
+					&::after {opacity: 1}
+				}
+				&:hover {
+					color: #000;
+					&::after {opacity: 1}
+				}
+				span {display: inline-block; line-height: 1.75}
+			}
+		}
+	}
+	.filters {
+		float: left; width: 25%;
+		h2 {font-size: 24px; color: $red; margin-top: -0.35em}
+		.toggle {display: none}
+		h3 {font-size: 18px; text-transform: uppercase}
+		ul {@include reset-list}
+		.selected-filters {
+			display: none;
+			h3 {margin: 0 0 0.5em 0; font-size: 12px; font-weight: 500; color: $red}
+			ul {margin-top: 0.75em; margin-right: 2.5em; font-size: 14px; font-weight: 500; text-transform: capitalize}
+			li {display: inline-block; margin: 0 0.25em 0.25em 0; padding: 0.25em 0.75em; border: 1px solid rgba(0,0,0,0.1); border-radius: 3px}
+			a {
+				display: block; float: right; width: 12px; height: 12px; padding: 5px; margin: 0px -5px 0 0.25em; font-size: 12px; line-height: 0; cursor: pointer;
+				span {
+					display: block; position: relative; width: 1em; height: 0.125em; border-radius: 0.1em; background: #000; opacity: 1;
+					&:first-child {transform: rotate(45deg); top: 45%}
+					&:last-child {transform: rotate(-45deg); top: 32%}
+				}
+				&:hover {
+					span {
+						background: $red;
+					}
+				}
+			}
+		}
+		form {
+			li {position: relative; margin: 0; padding: 3px 0 3px 30px}
+			label {display: inline-block; cursor: pointer}
+			input[type="checkbox"] {position: absolute; left: 2px; top: 8px}
+			.styled-checkbox {content: ''; position: absolute; left: 0; top: 7px; z-index: 1; display: block; width: 16px; height: 16px; margin-right: 12px; background: #FFF; border: 1px solid #CCC; border-radius: 2px; cursor: pointer}
+			input[type="checkbox"]:checked + .styled-checkbox::after {content: ''; display: block; position: absolute; left: 4px; top: 4px; width: 8px; height: 8px; border-radius: 1px; background: $blue}
+			.apply-container {min-height: 120px}
+			.apply {
+				padding-top: 28px; bottom: -120px; transition: all 0.2s;
+				@media (min-width: 1024px) {
+					&.sticky {position: fixed; bottom: 0; z-index: 10; width: calc(300px - 2.5em); background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,1) 20%); border-top: 1px solid rgba(0,0,0,0.1)}
+				}
+			}
+			.clear {
+				display: block; margin: 1em 2em 0 0; padding-bottom: 1em; font-size: 14px; color: #999; text-decoration: none; transition: 0.2s;
+				&:hover {color: #333}
+			}
+		}
+	}
+	.content {
+		float: right; width: 75%;
+		.trips {
+			@include reset-list;
+			&.loading {
+				&::before {content: ''; display: block; margin: 9% auto 0 auto; width: 24px; height: 24px; background: url('../../../img/unoptimized/loader.gif') no-repeat center / 24px 24px}
+			}
+			li {
+				float: left; width: 31%; margin: 0 0 45px 3.5%; padding: 0;
+				&:nth-child(3n+1) {clear: both; margin-left: 0}
+				&.alert {float: none; width: 100%}
+				.data {float: left; width: 63%}
+				.button {
+					float: right; width: 33%; padding-top: 6px;
+					.btn {width: 100%; padding: 9px 0; text-align: center}
+				}
+				.image {
+					position: relative;
+					img {width: 100%}
+					&::after {content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.25) url('../../../img/unoptimized/icons/icon-info.png') no-repeat center / 48px 48px; opacity: 0; transition: all 0.2s}
+					&:hover {
+						&::after {opacity: 1}
+					}
+					img {
+						display: block; margin-bottom: 8px; transition: all 0.2s;
+					}
+				}
+				h2 {
+					margin: 3px 0; font-size: 16px; line-height: 1.125em; font-weight: 500; color: $red; text-transform: uppercase;
+					&:hover {color: $blue}
+				}
+				.country {margin-top: -1px; font-size: 12px; font-weight: 500; color: #666; text-transform: uppercase}
+				.date {margin-top: -1px; font-size: 12px; color: #666; text-transform: uppercase}
+			}
+		}
+	}
+	&::after {@include pseudo-clear}
+}
+
+footer {
+	clear: both; margin-top: 55px; padding-top: 30px; background: $blue url('../../../img/unoptimized/footer.png');
+	.blocks {
+		display: flex; align-items: stretch;
+	}
+	.block {
+		float: left; padding: 30px; background: #FFF; box-shadow: 0 3px 6px rgba(0,0,0,0.2); font-size: 14px;
+		.column {
+			float: left; width: 47.5%; margin-left: 5%;
+			&:first-child {margin-left: 0}
+		}
+		h2 {
+			font-size: 16px; font-weight: 500; color: $red; text-transform: uppercase;
+			&:first-child {margin-top: 0}
+		}
+		ul {@include reset-list}
+		&.contact {width: calc(22.5% - 60px)}
+		&.navigation {
+			width: calc(50% - 60px); margin-left: 2.5%; margin-right: 2.5%;
+			&::after {@include pseudo-clear}
+			li {
+				padding: 8px 0; border-top: 1px solid rgba(0,0,0,0.1);
+				&:first-child {border-top: 0; padding-top: 0}
+				a {
+					color: #000; text-decoration: none;
+					&:hover {color: $blue}
+				}
+			}
+		}
+		&.social-media {
+			width: calc(22.5% - 60px);
+			ul {margin-top: 20px}
+			li {
+				margin-bottom: 20px;
+				a {
+					display: inline-block; padding-left: 42px; background: transparent no-repeat left center / 32px 32px; line-height: 32px; font-size: 12px; font-weight: 500; color: #000; text-decoration: none; text-transform: uppercase;
+					&:hover {color: $blue}
+				}
+				&.facebook a {background-image: url('../../../img/unoptimized/icons/icon-social-fb.png')}
+				&.twitter a {background-image: url('../../../img/unoptimized/icons/icon-social-twitter.png')}
+				&.google-plus a {background-image: url('../../../img/unoptimized/icons/icon-social-gplus.png')}
+				&.instagram a {background-image: url('../../../img/unoptimized/icons/icon-social-insta.png')}
+			}
+		}
+	}
+	.copyright {
+		clear: both; padding: 35px 0; font-size: 14px; color: #FFF; text-align: center; text-transform: uppercase; letter-spacing: 0.2em;
+		strong {font-weight: 500}
+	}
+}
+
+@media (max-width: 1260px) {
+	.container {margin-left: 30px; margin-right: 30px}
+	main {
+		.filters {
+			form {
+				.apply {
+					@media (min-width: 1024px) {
+						&.sticky {width: calc(25% - 2.5em - 15px)}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	header {
+		.tools {
+			li {margin: 0 15px}
+		}
+	}
+	section {
+		&.promo {
+			.slider {
+				.slides {
+					li {padding: 0; height: 250px}
+				}
+			}
+		}
+	}
+	main {
+		.heading {padding-left: 0; text-align: center}
+		.filters {
+			float: none; width: 100%; margin-bottom: 48px; font-size: 14px;
+			h2 {display: none}
+			.toggle {display: block; text-align: center; padding-bottom: 8px}
+			.selected-filters {
+				margin-top: -1em; margin-bottom: 2em; text-align: center;
+				ul {margin-right: 0}
+			}
+			form {
+				height: 0; overflow: hidden; margin-top: 22px; transition: all 0.2s;
+				li {padding-top: 5px; padding-bottom: 5px}
+				.group {
+					float: left; width: 25%;
+					&:nth-child(4n+1) {clear: both}
+				}
+				.apply {clear: both; margin-bottom: 32px; padding: 32px 0; border-bottom: 1px solid rgba(0,0,0,0.1); text-align: center}
+				.clear {margin-right: 0}
+			}
+		}
+		.content {
+			float: none; width: 100%;
+		}
+	}
+	footer {
+		.container {margin-left: 30px; margin-right: 30px}
+		.blocks {flex-wrap: wrap}
+		.block {
+			&.contact {order: 1; width: calc(50% - 60px - 15px); margin-right: 30px; margin-bottom: 30px}
+			&.navigation {order: 3; flex-basis: 100%; margin-left: 0; margin-right: 0}
+			&.social-media {order: 2; width: calc(50% - 60px - 15px); margin-bottom: 30px}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	header {
+		.container {margin-left: 5px; margin-right: 5px}
+		.logo {
+			a {
+				float: none; width: 162px; height: 57px; background-size: 162px 57px; margin: 15px auto;
+			}
+		}
+		.tools {
+			float: none; text-align: center;
+			ul {margin: 20px 0 0 0}
+			li {
+				margin: 0 8px;
+				a {padding-top: 30px; background-size: 24px 24px; font-size: 11px}
+			}
+		}
+	}
+	section {
+		&.promo {
+			.slider {
+				.slides {
+					margin: 15px 0;
+					.text {bottom: 40%}
+				}
+			}
+		}
+	}
+	main {
+		.filters {
+			form {
+				.group {
+					width: 50%;
+					&:nth-child(2n+1) {clear: both}
+				}
+			}
+		}
+		.content {
+			.trips {
+				li {
+					width: 47.5%; margin-left: 5%;
+					&:nth-child(3n+1) {clear: none; margin-left: 5%}
+					&:nth-child(2n+1) {clear: both; margin-left: 0}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	main {
+		.content {
+			.trips {
+				li {
+					float: none; clear: both; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto;
+					&:nth-child(3n+1) {margin-left: auto}
+					&:nth-child(2n+1) {margin-left: auto}
+					&::after {@include pseudo-clear}
+				}
+			}
+		}
+	}
+	footer {
+		.container {margin-left: 20px; margin-right: 20px}
+		.blocks {display: block}
+		.block {
+			&.contact,
+			&.navigation,
+			&.social-media {float: none; clear: both; width: calc(100% - 60px); margin-bottom: 20px}
+			&.social-media {margin-bottom: 0}
+		}
+	}
+}
+
+
+

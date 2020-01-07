@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Unoptimized</title>
+<link rel="stylesheet" href="assets/css/unoptimized/style.css">
+<script type="text/javascript" src="assets/js/unoptimized/hammer.min.js"></script>
+<script type="text/javascript" src="assets/js/unoptimized/slider.js"></script>
+<script type="text/javascript" src="assets/js/unoptimized/filters.js"></script>
+<script type="text/javascript" src="assets/js/unoptimized/sortingOptions.js"></script>
+<script type="text/javascript" src="assets/js/unoptimized/trips.js"></script>
+<script type="text/javascript" src="assets/js/unoptimized/scripts.js"></script>
+</head>
+<body>
+
+<header>
+	<div class="container">
+		<div class="logo">
+			<a href="/">Starfish Travel</a>
+		</div>
+		<nav role="navigation" class="tools">
+			<ul>
+				<li class="account"><a href="javascript:;">Account</a></li>
+				<li class="settings"><a href="javascript:;">Settings</a></li>
+				<li class="add"><a href="javascript:;">Add content</a></li>
+				<li class="logout"><a href="javascript:;">Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<section class="promo">
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<img src="img/unoptimized/images/slide-01.jpg" alt="">
+				<div class="overlay"></div>
+				<div class="text">Explore the world with us</div>
+				<div class="button">
+					<a href="javascript:;" class="btn btn-large">See today's hot deals</a>
+				</div>
+			</li>
+			<li>
+				<img src="img/unoptimized/images/slide-02.jpg" alt="">
+				<div class="overlay"></div>
+				<div class="text">Discover different cultures</div>
+				<div class="button">
+					<a href="javascript:;" class="btn btn-large">See today's hot deals</a>
+				</div>
+			</li>
+			<li>
+				<img src="img/unoptimized/images/slide-03.jpg" alt="">
+				<div class="overlay"></div>
+				<div class="text">Explore the world with us</div>
+				<div class="button">
+					<a href="javascript:;" class="btn btn-large">City breaks</a>
+				</div>
+			</li>
+			<li>
+				<img src="img/unoptimized/images/slide-04.jpg" alt="">
+				<div class="overlay"></div>
+				<div class="text">Discover different cultures</div>
+				<div class="button">
+					<a href="javascript:;" class="btn btn-large">See today's hot deals</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<main role="main">
+	<div class="container">
+		<div class="heading">
+			<h1>Top destinations for this year</h1>
+			<div class="sort">
+				<span class="label">Sort by:</span>
+				<a href="javascript:;" data-sort="popularity" class="trending active"><span>Trending</span></a>
+				<a href="javascript:;" data-sort="startdate" class="date"><span>Start date</span></a>
+			</div>
+		</div>
+		<div class="filters">
+			<h2>Filter destinations</h2>
+			<div class="selected-filters">
+				<h3>Selected filters:</h3>
+				<ul></ul>
+			</div>
+			<div class="toggle">
+				<a href="javascript:;" class="btn btn-secondary">Show filters</a>
+			</div>
+			<form>
+				<div class="group">
+					<h3>Americas</h3>
+					<ul>
+						<li><label><input type="checkbox" name="argentina" value="Argentina"><span class="styled-checkbox"></span> Argentina</label></li>
+						<li><label><input type="checkbox" name="brazil" value="Brazil"><span class="styled-checkbox"></span> Brazil</label></li>
+						<li><label><input type="checkbox" name="canada" value="Canada"><span class="styled-checkbox"></span> Canada</label></li>
+						<li><label><input type="checkbox" name="chile" value="Chile"><span class="styled-checkbox"></span> Chile</label></li>
+						<li><label><input type="checkbox" name="costa-rica" value="Costa Rica"><span class="styled-checkbox"></span> Costa Rica</label></li>
+						<li><label><input type="checkbox" name="jamaica" value="Jamaica"><span class="styled-checkbox"></span> Jamaica</label></li>
+						<li><label><input type="checkbox" name="mexico" value="Mexico"><span class="styled-checkbox"></span> Mexico</label></li>
+						<li><label><input type="checkbox" name="usa" value="USA"><span class="styled-checkbox"></span> USA</label></li>
+						<li><label><input type="checkbox" name="uruguay" value="Uruguay"><span class="styled-checkbox"></span> Uruguay</label></li>
+					</ul>
+				</div>
+				<div class="group">
+					<h3>Africa</h3>
+					<ul>
+						<li><label><input type="checkbox" name="kenya" value="Kenya"><span class="styled-checkbox"></span> Kenya</label></li>
+						<li><label><input type="checkbox" name="madagascar" value="Madagascar"><span class="styled-checkbox"></span> Madagascar</label></li>
+						<li><label><input type="checkbox" name="mauritius" value="Mauritius"><span class="styled-checkbox"></span> Mauritius</label></li>
+						<li><label><input type="checkbox" name="morocco" value="Morocco"><span class="styled-checkbox"></span> Morocco</label></li>
+						<li><label><input type="checkbox" name="south-africa" value="South Africa"><span class="styled-checkbox"></span> South Africa</label></li>
+						<li><label><input type="checkbox" name="tunesia" value="Tunesia"><span class="styled-checkbox"></span> Tunesia</label></li>
+						<li><label><input type="checkbox" name="zanzibar" value="Zanzibar"><span class="styled-checkbox"></span> Zanzibar</label></li>
+					</ul>
+				</div>
+				<div class="group">
+					<h3>Asia</h3>
+					<ul>
+						<li><label><input type="checkbox" name="china" value="China"><span class="styled-checkbox"></span> China</label></li>
+						<li><label><input type="checkbox" name="india" value="India"><span class="styled-checkbox"></span> India</label></li>
+						<li><label><input type="checkbox" name="indonesia" value="Indonesia"><span class="styled-checkbox"></span> Indonesia</label></li>
+						<li><label><input type="checkbox" name="japan" value="Japan"><span class="styled-checkbox"></span> Japan</label></li>
+						<li><label><input type="checkbox" name="malaysia" value="Malaysia"><span class="styled-checkbox"></span> Malaysia</label></li>
+						<li><label><input type="checkbox" name="maldives" value="Maldives"><span class="styled-checkbox"></span> Maldives</label></li>
+						<li><label><input type="checkbox" name="nepal" value="Nepal"><span class="styled-checkbox"></span> Nepal</label></li>
+						<li><label><input type="checkbox" name="philippines" value="Philippines"><span class="styled-checkbox"></span> Philippines</label></li>
+						<li><label><input type="checkbox" name="singapore" value="Singapore"><span class="styled-checkbox"></span> Singapore</label></li>
+						<li><label><input type="checkbox" name="thailand" value="Thailand"><span class="styled-checkbox"></span> Thailand</label></li>
+						<li><label><input type="checkbox" name="vietnam" value="Vietnam"><span class="styled-checkbox"></span> Vietnam</label></li>
+					</ul>
+				</div>
+				<div class="group">
+					<h3>Europe</h3>
+					<ul>
+						<li><label><input type="checkbox" name="austria" value="Austria"><span class="styled-checkbox"></span> Austria</label></li>
+						<li><label><input type="checkbox" name="bulgaria" value="Bulgaria"><span class="styled-checkbox"></span> Bulgaria</label></li>
+						<li><label><input type="checkbox" name="croatia" value="Croatia"><span class="styled-checkbox"></span> Croatia</label></li>
+						<li><label><input type="checkbox" name="denmark" value="Denmark"><span class="styled-checkbox"></span> Denmark</label></li>
+						<li><label><input type="checkbox" name="finland" value="Finland"><span class="styled-checkbox"></span> Finland</label></li>
+						<li><label><input type="checkbox" name="france" value="France"><span class="styled-checkbox"></span> France</label></li>
+						<li><label><input type="checkbox" name="greece" value="Greece"><span class="styled-checkbox"></span> Greece</label></li>
+						<li><label><input type="checkbox" name="hungary" value="Hungary"><span class="styled-checkbox"></span> Hungary</label></li>
+						<li><label><input type="checkbox" name="italy" value="Italy"><span class="styled-checkbox"></span> Italy</label></li>
+						<li><label><input type="checkbox" name="ireland" value="Ireland"><span class="styled-checkbox"></span> Ireland</label></li>
+						<li><label><input type="checkbox" name="netherlands" value="Netherlands"><span class="styled-checkbox"></span> Netherlands</label></li>
+						<li><label><input type="checkbox" name="norway" value="Norway"><span class="styled-checkbox"></span> Norway</label></li>
+						<li><label><input type="checkbox" name="poland" value="Poland"><span class="styled-checkbox"></span> Poland</label></li>
+						<li><label><input type="checkbox" name="portugal" value="Portugal"><span class="styled-checkbox"></span> Portugal</label></li>
+						<li><label><input type="checkbox" name="spain" value="Spain"><span class="styled-checkbox"></span> Spain</label></li>
+						<li><label><input type="checkbox" name="sweden" value="Sweden"><span class="styled-checkbox"></span> Sweden</label></li>
+						<li><label><input type="checkbox" name="switzerland" value="Switzerland"><span class="styled-checkbox"></span> Switzerland</label></li>
+					</ul>
+				</div>
+				<div class="apply-container">
+					<div class="apply">
+						<button class="btn">Apply filters</button>
+						<a href="javascript:;" class="clear">Clear filters</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="content">
+			<ul class="trips" data-json-src="trips.json"></ul>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div class="container">
+		<div class="blocks">
+		<div class="block contact">
+			<h2>Contact us</h2>
+			<img src="img/unoptimized/logo.png" alt="Starfish Travel">
+			<p><strong>STARFISH TRAVEL</strong>
+			<br>Street Name 80
+			<br>12-345 Cityname
+			<br>+678 90 123 456
+			<br><a href="mailto:contact@star.fish">contact@star.fish</a></p>
+		</div>
+		<div class="block navigation">
+			<div class="column">
+				<h2>Services</h2>
+				<ul>
+					<li><a href="javascript:;">Individual trips</a></li>
+					<li><a href="javascript:;">Family trips</a></li>
+					<li><a href="javascript:;">Incentive</a></li>
+					<li><a href="javascript:;">Hotels and apartments</a></li>
+					<li><a href="javascript:;">Flights</a></li>
+					<li><a href="javascript:;">Car rental</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h2>Information</h2>
+				<ul>
+					<li><a href="javascript:;">About us</a></li>
+					<li><a href="javascript:;">How to book</a></li>
+					<li><a href="javascript:;">FAQ</a></li>
+					<li><a href="javascript:;">Terms and conditions</a></li>
+					<li><a href="javascript:;">Privacy policy</a></li>
+					<li><a href="javascript:;">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="block social-media">
+			<h2>Follow us on:</h2>
+			<ul>
+				<li class="facebook"><a href="javascript:;">Facebook</a></li>
+				<li class="twitter"><a href="javascript:;">Twitter</a></li>
+				<li class="google-plus"><a href="javascript:;">Google Plus</a></li>
+				<li class="instagram"><a href="javascript:;">Instagram</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="copyright">
+			Copyright 2018 &bull; <strong>Starfish Travel</strong> &bull; All rights reserved
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

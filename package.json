@@ -1,0 +1,18 @@
+{
+	"name": "optimization-case-study",
+	"version": "1.0.0",
+	"description": "Case study project for website optimization course",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Mateusz Skrzypczak",
+	"license": "ISC",
+	"devDependencies": {
+		"gulp": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-order": "^1.2.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-uglify": "^3.0.1"
+	}
+}
